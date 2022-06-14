@@ -125,3 +125,16 @@ baseline：《Joint extraction of entities and relations based on a novel taggin
 ![image-20220613115800841](C:\Users\27645\AppData\Roaming\Typora\typora-user-images\image-20220613115800841.png)
 
 ![image-20220613115814818](C:\Users\27645\AppData\Roaming\Typora\typora-user-images\image-20220613115814818.png)
+
+
+
+#### 4 后话
+
+《CopyMTL: Copy mechanism for joint extraction of entities and relations with multi-task learning》这篇文章对CopyRE进行了详细的分析，发现如下两个缺陷：
+
+> 我们证明CopyRE实际上使用相同的分布来建模头实体h和尾实体t，选择最高概率作为h，在掩盖了最高概率后，选择次高概率作为t，因此没有此掩码，它无法区分h和t。以这种方式建模h和t分布可能会导致各种问题，模型不仅在不同的h和t下非常弱，但在预测t时，也无法获得关于h的信息。 
+>
+> 其次，CopyRE无法提取具有多个标记的实体。基于Copy Mechanism的解码器总是指向任何实体的最后一个标记，这限制了模型的适用性。例如，当实体有两个标记时，如Steven Jobs，CopyRE仅预测“Jobs”，而不是整个实体“Steven  Jobs”。在真实的word场景中，多标记实体很常见，因此这会极大地影响模型性能。
+
+这两点也是CopyMTL一文着重克服的问题
+
