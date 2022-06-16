@@ -1,8 +1,8 @@
 ## Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism
 
 >  2018-ACL
-> Zeng X, Zeng D, He S, et al. 
-> "Extracting relational facts by an end-to-end neural model with copy mechanism." 
+>  Zeng X, Zeng D, He S, et al. 
+>  "Extracting relational facts by an end-to-end neural model with copy mechanism." 
 
 作者提出关系三元组在同一句子中可能存在重叠，并将其分为三类情况：
 
@@ -10,7 +10,7 @@
 2. EntityPairOverlap（EPO）：实体对重叠
 3. SingleEntityOverlap（SEO)：单个实体重叠
 
-![image-20220613100829734](C:\Users\27645\AppData\Roaming\Typora\typora-user-images\image-20220613100829734.png)
+<img src="论文阅读-Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism.assets/image-20220615100113779.png" alt="image-20220615100113779" style="zoom:67%;" />
 
 现有大多数方法只对Normal子类进行研究，忽略了一个实体可能存在多关系的情况。这篇文章指向的问题是**关系三元组重叠**的情况。
 
@@ -46,11 +46,11 @@
 
 Bi-directional RNN将文本$$s=[w_1,..,w_n]$$编码为固定长度的向量$$O^E=[o_1^E,...,o_n^E],o_t^E=[\overrightarrow{o_t^E}；\overleftarrow{o_{n-t+1}^E}]$$，同时RNN隐藏层输出$s=[\overrightarrow{h_n^E};\overleftarrow{h_n^E}]$。
 
-<img src="C:\Users\27645\AppData\Roaming\Typora\typora-user-images\image-20220613103622295.png" alt="image-20220613103622295" style="zoom: 67%;" />
+![image-20220615100137869](论文阅读-Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism.assets/image-20220615100137869.png)
 
 ###### 2.1.2 Decoder
 
-<img src="C:\Users\27645\AppData\Roaming\Typora\typora-user-images\image-20220613105025734.png" alt="image-20220613105025734" style="zoom: 67%;" />
+<img src="论文阅读-Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism.assets/image-20220615100151777.png" alt="image-20220615100151777" style="zoom: 50%;" />
 
 Figure3中，$g$为decoder function，$h_0^D$由编码器隐藏层输出$s$初始化。$c_t$为attention vector，$v_t$为t-1步骤中复制过来的实体或预测的关系的embedding。
 $$
@@ -118,13 +118,13 @@ $$
 **Results** 
 baseline：《Joint extraction of entities and relations based on a novel tagging scheme.》
 
-![image-20220613115623375](C:\Users\27645\AppData\Roaming\Typora\typora-user-images\image-20220613115623375.png)
+<img src="论文阅读-Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism.assets/image-20220615100210288.png" alt="image-20220615100210288" style="zoom:50%;" />
 
-![image-20220613115747475](C:\Users\27645\AppData\Roaming\Typora\typora-user-images\image-20220613115747475.png)
+<img src="论文阅读-Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism.assets/image-20220615100220485.png" alt="image-20220615100220485" style="zoom:67%;" />
 
-![image-20220613115800841](C:\Users\27645\AppData\Roaming\Typora\typora-user-images\image-20220613115800841.png)
+<img src="论文阅读-Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism.assets/image-20220615100233979.png" alt="image-20220615100233979" style="zoom:67%;" />
 
-![image-20220613115814818](C:\Users\27645\AppData\Roaming\Typora\typora-user-images\image-20220613115814818.png)
+<img src="论文阅读-Extracting Relational Facts by an End-to-End Neural Model with Copy Mechanism.assets/image-20220615100248061.png" alt="image-20220615100248061" style="zoom:67%;" />
 
 
 

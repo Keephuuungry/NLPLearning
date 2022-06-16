@@ -39,7 +39,7 @@ MrMep总体架构由三个主要部分组成：Encoder, Multiple Relation Classi
 <u>Multiple Relation Classifiers</u>: 预测S中可能存在的关系
 <u>Variable-length Entity Pair Predictor</u>: 依次为每一种可能的关系类型生成所有可能的实体对
 
-![image-20220614203045510](C:\Users\27645\AppData\Roaming\Typora\typora-user-images\image-20220614203045510.png)
+![image-20220615100552428](论文阅读-MrMep Joint Extraction of Multiple Relations and Multiple Entity Pairs Based on Triplet Attention.assets/image-20220615100552428.png)
 
 ##### 2.2 Encoder
 
@@ -49,7 +49,7 @@ MrMep总体架构由三个主要部分组成：Encoder, Multiple Relation Classi
 
 在CNN卷积部分，文章采用《Convolutional Neural Networks for Sentence Classification》一文中提出的卷积结构（max-over-time pooling）。该CNN模块输出text embedding$Q$与原token representation $X_n$拼接，得到fused vector $H=Concat(Q,X_n)$.
 
-<img src="C:\Users\27645\AppData\Roaming\Typora\typora-user-images\image-20220614203621931.png" alt="image-20220614203621931" style="zoom: 67%;" />
+<img src="论文阅读-MrMep Joint Extraction of Multiple Relations and Multiple Entity Pairs Based on Triplet Attention.assets/image-20220614203621931.png" alt="image-20220614203621931" style="zoom: 67%;" />
 
 接着经过一层线性层，一层线性层和一层softmax层。值得注意的是，最终softmax输出为概率分布，表示该文本是否包含第j个关系。第一层线性层输出为第j个关系的嵌入 relation embedding $R_j$。
 
@@ -108,10 +108,10 @@ $W^\beta,W^{p'},W^{a'}$: learnable parameters
 
 **Results**:
 
-<img src="C:\Users\27645\AppData\Roaming\Typora\typora-user-images\image-20220614213818479.png" alt="image-20220614213818479" style="zoom:67%;" />
+<img src="论文阅读-MrMep Joint Extraction of Multiple Relations and Multiple Entity Pairs Based on Triplet Attention.assets/image-20220614213818479.png" alt="image-20220614213818479" style="zoom:67%;" />
 
-<img src="C:\Users\27645\AppData\Roaming\Typora\typora-user-images\image-20220614213823826.png" alt="image-20220614213823826" style="zoom:67%;" />
+<img src="论文阅读-MrMep Joint Extraction of Multiple Relations and Multiple Entity Pairs Based on Triplet Attention.assets/image-20220614213823826.png" alt="image-20220614213823826" style="zoom:67%;" />
 
-<img src="C:\Users\27645\AppData\Roaming\Typora\typora-user-images\image-20220614213848059.png" alt="image-20220614213848059" style="zoom:67%;" />
+<img src="论文阅读-MrMep Joint Extraction of Multiple Relations and Multiple Entity Pairs Based on Triplet Attention.assets/image-20220614213848059.png" alt="image-20220614213848059" style="zoom:67%;" />
 
-<img src="C:\Users\27645\AppData\Roaming\Typora\typora-user-images\image-20220614213900013.png" alt="image-20220614213900013" style="zoom: 50%;" />
+<img src="论文阅读-MrMep Joint Extraction of Multiple Relations and Multiple Entity Pairs Based on Triplet Attention.assets/image-20220614213900013.png" alt="image-20220614213900013" style="zoom: 50%;" />
