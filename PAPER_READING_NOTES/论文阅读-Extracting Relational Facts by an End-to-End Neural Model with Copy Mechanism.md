@@ -138,3 +138,4 @@ baseline：《Joint extraction of entities and relations based on a novel taggin
 
 这两点也是CopyMTL一文着重克服的问题
 
+同一作者的后续论文：Learning the extraction order of multiple relational facts in a sentence with reinforcement learning. 2019-EMNLP

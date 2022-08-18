@@ -197,3 +197,4 @@ Evaluation：P、R、F1
 14. Table filling multi-task recurrent neural network for joint entity and relation extraction
 15. Global normalization of convolutional neural networks for joint entity and relation classification
 16. Going out on a limb: Joint extraction of entity mentions and relations without dependency trees
+17. 2019 Graphrel: Modeling text as relational graphs for joint entity and relation extraction.
